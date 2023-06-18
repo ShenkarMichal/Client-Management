@@ -1,15 +1,15 @@
 <div>
 
-    <form (ngSubmit)="addTodo()">
+    <form (ngSubmit)="addTodo()" ngNativeValidate>
 
         <label>Client:</label>
-        <select [(ngModel)]="newTodo.clientId" name="clientId">
+        <select [(ngModel)]="newTodo.clientId" name="clientId" required>
             <option selected value="">Select Client</option>
             <option *ngFor="let c of clients" value={{c._id}}>{{c.name}} / {{c.business}}</option>
         </select>
 
         <label>Description:</label>
-        <textarea [(ngModel)]="newTodo.description" name="description"></textarea>
+        <textarea [(ngModel)]="newTodo.description" name="description" required></textarea>
 
         <button>ADD</button>
     </form>
