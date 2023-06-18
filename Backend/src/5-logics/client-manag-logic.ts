@@ -23,10 +23,16 @@ async function deleteTodo(_id:string): Promise<void> {
     if(!deleteTodo) throw new ResourceNotFoundErrorModel(_id)    
 }
 
+async function updateTodo(todo: ITodoModel): Promise<ITodoModel> {
+    const updateTodo = await TodoModel.findByIdAndUpdate(todo._id, todo)
+    return updateTodo
+}
+
 
 export default {
     getAllClients,
     getAllTodoes,
     addTodo,
-    deleteTodo
+    deleteTodo,
+    updateTodo
 }

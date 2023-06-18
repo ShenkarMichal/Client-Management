@@ -1,0 +1,26 @@
+div {
+    padding: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    border: 3px solid rgb(145, 9, 100);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+a {
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(62, 61, 61);
+}
+
+a:hover {
+    color: pink;
+}
+
+.active {
+    color:  rgb(145, 9, 100) ;
+}

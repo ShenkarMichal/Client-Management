@@ -1,0 +1,24 @@
+<div>
+    <table>
+        <thead>
+            <th>#To-Do</th>
+            <th>Description</th>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of todoes">
+                <td>{{getIndex(t._id)}}</td>
+                <td>{{t.description}}</td>
+                <td>{{t.clients.name}} / {{t.clients.business}}</td>
+                <td>{{t.date| date: 'd/M/Y HH:mm'}}</td>
+                <td>
+                    <input type="checkbox" [(ngModel)]="t.status" (click)="updateTodo(t._id)">
+                </td>
+                <td (click)="deleteTodo(t._id)">❌</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

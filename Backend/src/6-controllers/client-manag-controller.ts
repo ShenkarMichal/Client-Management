@@ -52,5 +52,17 @@ router.delete("/to-does/:_id", async (request: Request, response: Response, next
     }
 })
 
+//UPDATE to-do:
+router.put("/to-does/", async (request: Request, response: Response, next: NextFunction) => {
+    try {
+        const todo = new TodoModel(request.body)
+        const updateTodo = await clientManagLogic.updateTodo(todo)        
+        response.json(todo)
+    }
+    catch (err: any) {
+        next(err)        
+    }
+})
+
 
 export default router

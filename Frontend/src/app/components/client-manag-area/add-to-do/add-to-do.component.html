@@ -1,0 +1,16 @@
+<div>
+
+    <form (ngSubmit)="addTodo()">
+
+        <label>Client:</label>
+        <select [(ngModel)]="newTodo.clientId" name="clientId">
+            <option selected value="">Select Client</option>
+            <option *ngFor="let c of clients" value={{c._id}}>{{c.name}} / {{c.business}}</option>
+        </select>
+
+        <label>Description:</label>
+        <textarea [(ngModel)]="newTodo.description" name="description"></textarea>
+
+        <button>ADD</button>
+    </form>
+</div>
